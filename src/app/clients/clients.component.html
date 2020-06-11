@@ -1,0 +1,28 @@
+<script src="clients.js"></script>
+<h2>Clients</h2>
+<hr />
+<!-- eerst test voor uitlezen variablen uit TS-->
+<div>
+De eerste client heet {{ client1.firstName }} {{ client1.lastName }}
+</div>
+<div *ngIf="client2"><!-- voor als er misschien nog geen object is aangemaakt... -->
+De tweede client heet {{ client2.firstName }} {{ client2.lastName }}
+</div>
+<br />
+<button (click)="fillClients()">fill clients</button>
+<div *ngIf="clientsarray">
+  <ul>
+    <li *ngFor="let client of clientsarray">
+      {{ client.firstName }}
+    </li>
+  </ul>
+</div>
+<hr />
+
+
+
+<!-- CLIENTS SHOW ------->
+<a class="btn btn-warning" href="#" role="button"
+onclick="MaakTabelVanJSON()">Tsar bomba!</a>
+<br/>
+<p id="showData"></p>

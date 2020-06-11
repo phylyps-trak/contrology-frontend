@@ -22,15 +22,14 @@ De tweede client heet {{ client2.firstName }} {{ client2.lastName }}
 <hr />
 --> 
 <h3>Tweede methode (Alex)</h3>
-<ul>
-  <li *ngFor="let client of getClients()">
-    {{ client.p?.voornaam }} {{ client.p?.achternaam }}
-  </li>
-</ul>
-
-
-<!-- CLIENTS SHOW ------->
-<a class="btn btn-warning" href="#" role="button"
-onclick="MaakTabelVanJSON()">Tsar bomba!</a>
-<br/>
-<p id="showData"></p>
+<div class = "myContainer">
+      <div class = "box"  *ngFor="let client of getClients()">
+            <div class="card">
+                  <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:100%">
+                  <div class="container">
+                        <h4><b>{{ client.p?.voornaam }} {{ client.p?.achternaam }}</b></h4>
+                        <!-- dat met zo'n vraagteken is null-safe dereferencing, zok op wat dat precies is... -->
+                  </div>
+            </div>
+      </div>
+</div>

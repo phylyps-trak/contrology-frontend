@@ -10,6 +10,7 @@ export class ClientsService {
 /* basic url om te gebruiken voor deze service*/
   private url:string = "http://localhost:8082/api/clients";
   private url2:string = "http://localhost:4200/clients";
+  
 /* get alles methode */
   getClients() {
     return this.http.get(this.url);

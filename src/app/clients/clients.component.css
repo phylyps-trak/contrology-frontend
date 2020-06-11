@@ -1,4 +1,61 @@
-* {
-    color: #090;
-    font-family: 'Courier New', Courier, monospace;
-}
+/* BASIC CARD SHIT */
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+  }
+  /* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+  /* Add rounded corners to the top left and the top right corner of the image */
+  img {
+    border-radius: 5px 5px 0 0;
+  }
+
+/* FLEXBOX SHIT */
+/* een beetje default styling */
+.box {
+      color: black;
+      font-size: 100px;
+      text-align: center;
+      text-shadow: 4px, 4px, 0, rgba(0,0,0,0.1);
+  }
+  .box p {
+      font-size: 12px;
+  }
+  
+  /* kleurtjes per box */
+  .box1 { background:#1abc9c; }
+  .box2 { background:#469283; }
+  .box3 { background:#2f4d47; }
+  .box4 { background:#9cccc2; }
+  .box5 { background:#66f1d6; }
+  .box6 { background:#00ffcc; }
+  
+  /* start van de flexbox */
+
+      /*selector voor de container, turns display block into flexinble wrapper*/
+  .myContainer {
+      display: flex;
+          /* inline-flex is voor als je niet volledige width wil, maar slechts wat i nodig heeft...*/
+      min-height: 100vh;
+          /* vh = viewport height*/
+      border: 10px solid goldenrod;
+      flex-direction: row;  /*standard */
+      /* means MAIN AXIS is left -> right, & CROSS AXIS is top->down*/
+      /*flex-direction: column;*/
+      /* means MAIN AXIS is top->down, & CROSS AXIS is left -> right*/
+      flex-wrap:wrap;
+      
+  }
+      /*selector voor child divs; flex items*/
+  .box {
+      flex:1;
+      /*1 proportion compared to the rest*/
+  }

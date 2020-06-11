@@ -1,23 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Client } from './clients/client';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientsService {
-
   constructor(private http:HttpClient) { }
-
-  getClientById(id:number) {
-    return this.http.get("http://localhost:4200/clients/1");
+/* basic url om te gebruiken voor deze service*/
+  private url:string = "http://localhost:8082/api/clients";
+  private url2:string = "http://localhost:4200/clients";
+/* get alles methode */
+  getClients() {
+    return this.http.get(this.url);
   }
 
-
 /* client creation doen we nu in de service: */
-  getClients(id:number):Client {
+  makeClients(id:number):Client {
     let client:Client = new Client;
     if (id === 1) {
       client.firstName = "Rachelle";

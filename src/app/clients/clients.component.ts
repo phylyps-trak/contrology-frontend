@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ClientsService } from '../clients.service';
 import { Client } from './client';
-import { from } from 'rxjs';
 
 @Component({
   selector: 'app-clients',
@@ -10,29 +9,37 @@ import { from } from 'rxjs';
 })
 
 export class ClientsComponent implements OnInit {
-client1:Client = new Client;
-client2:Client;
-client3:Client;
-clientsarray:Client[] = [];
-
-fillClients(){
-  this.clientsarray.push(this.client1);
-  this.clientsarray.push(this.client2);
-  this.clientsarray.push(this.client3);
-}
-
-
-  
   //geef service mee aan constructor, definieer in provider, is een soort autowiring
   //provider zit in app-module.ts
-  constructor(private clientsService: ClientsService) {
-    this.client1 = this.clientsService.getClients(1);
-    this.client2 = this.clientsService.getClients(2);
-    this.client3 = this.clientsService.getClients(3);
-   }
+  constructor(private service: ClientsService) {
+    this.client1 = this.service.makeClients(1);
+    this.client2 = this.service.makeClients(2);
+    this.client3 = this.service.makeClients(3);
+  }
+  private clientsArray:Client[] = [];
 
+   /* rest service gebruikt deze methode */
+  getClients():Client[] {
+    return this.clientsArray;
+  }
 
-  ngOnInit(): void {
+  /* bullshit aanmaak rommel */
+  client1:Client = new Client;
+  client2:Client;
+  client3:Client;
+
+  fillClients(){
+    this.clientsArray.push(this.client1);
+    this.clientsArray.push(this.client2);
+    this.clientsArray.push(this.client3);
+  }
+/* bij het laden van het component: pluk de data uit de service  */
+  ngOnInit():void {
+    this.service.getClients()
+      .subscribe(
+        response => {
+          this.clientsArray = response as Client[];
+        });
   }
 
 }

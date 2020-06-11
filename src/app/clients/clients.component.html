@@ -9,16 +9,24 @@ De eerste client heet {{ client1.firstName }} {{ client1.lastName }}
 De tweede client heet {{ client2.firstName }} {{ client2.lastName }}
 </div>
 <br />
+<!--tijdelijk uitgeschakeld
+<h3>Eerste methode</h3>
 <button (click)="fillClients()">fill clients</button>
-<div *ngIf="clientsarray">
+<div *ngIf="clientsArray">
   <ul>
-    <li *ngFor="let client of clientsarray">
+    <li *ngFor="let client of clientsArray">
       {{ client.firstName }}
     </li>
   </ul>
 </div>
 <hr />
-
+--> 
+<h3>Tweede methode (Alex)</h3>
+<ul>
+  <li *ngFor="let client of getClients()">
+    {{ client.p?.voornaam }} {{ client.p?.achternaam }}
+  </li>
+</ul>
 
 
 <!-- CLIENTS SHOW ------->

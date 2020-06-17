@@ -1,3 +1,15 @@
+
+.jumbotron {
+      background-image: url('../../assets/img/josephyard.jpg');
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: 100%;
+      background-blend-mode: overlay;
+}
+
+.text-center {
+      margin-bottom: -32px;
+}
 /* een beetje default styling */
 .box {
     color:white;
@@ -42,3 +54,4 @@
     /*flex:2;
     /*2 proportion compared to the rest*/
 }
+

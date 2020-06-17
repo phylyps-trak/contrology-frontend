@@ -1,0 +1,44 @@
+/* een beetje default styling */
+.box {
+      color:white;
+      font-size: 100px;
+      text-align: center;
+      text-shadow: 4px, 4px, 0, rgba(0,0,0,0.1);
+  }
+  .box p {
+      font-size: 20px;
+  }
+  
+  /* kleurtjes per box */
+  .box1 { background:#1abc9c; }
+  .box2 { background:#469283; }
+  .box3 { background:#2f4d47; }
+  .box4 { background:#9cccc2; }
+  .box5 { background:#66f1d6; }
+  .box6 { background:#00ffcc; }
+  
+  /* start van de flexbox */
+      /*selector voor de container, turns display block into flexinble wrapper*/
+  .myContainer {
+      display: flex;
+          /* inline-flex is voor als je niet volledige width wil, maar slechts wat i nodig heeft...*/
+      min-height: 100vh;
+          /* vh = viewport height*/
+      border: 10px solid goldenrod;
+      flex-direction: row;  /*standard */
+          /* means MAIN AXIS is left -> right, & CROSS AXIS is top->down*/
+      /*flex-direction: column;*/
+      /* means MAIN AXIS is top->down, & CROSS AXIS is left -> right*/
+      flex-wrap:wrap;
+      
+  }
+      /*selector voor child divs; flex items*/
+  .box {
+      width:33.333333%;
+      /*flex:1;*/
+      /*1 proportion compared to the rest*/
+  }
+  .box3 {
+      /*flex:2;
+      /*2 proportion compared to the rest*/
+  }

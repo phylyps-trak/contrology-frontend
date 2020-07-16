@@ -6,21 +6,28 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ClientsService {
-  constructor(private http:HttpClient) { }
-/* basic url om te gebruiken voor deze service*/
-  private url:string = "http://localhost:8082/api/clients";
-  private url2:string = "http://localhost:4200/clients";
-  
-/* get alles methode */
+  constructor(private http: HttpClient) { }
+
+/* --------------- basic url om te gebruiken voor deze service -------------- */
+  private url: string = 'http://localhost:8082/api/clients';
+
+/* !------------------------------- deprecated ------------------------------- */
+  private url2: string = 'http://localhost:4200/clients';
+
+/* ---------------------------- get alles methode --------------------------- */
+
   getClients() {
     return this.http.get(this.url);
   }
 
+
+/* --------------------------- verouderde methode! -------------------------- */
+
 /* client creation doen we nu in de service: */
-  makeClients(id:number):Client {
-    let client:Client = new Client;
+  makeClients(id: number): Client {
+    const client: Client = new Client;
     if (id === 1) {
-      client.firstName = "Rachelle";
+      client.firstName = 'Rachelle';
       client.lastName = "Philip";
     }
     if (id === 2) {
@@ -30,7 +37,7 @@ export class ClientsService {
     if (id === 3) {
       client.firstName = "Trees";
       client.lastName = "Elzinga";
-    }  
+    }
     return client;
 
   }

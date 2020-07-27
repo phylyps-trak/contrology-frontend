@@ -11,34 +11,10 @@ export class ClientsService {
 /* --------------- basic url om te gebruiken voor deze service -------------- */
   private url: string = 'http://localhost:8082/api/clients';
 
-/* !------------------------------- deprecated ------------------------------- */
-  private url2: string = 'http://localhost:4200/clients';
-
 /* ---------------------------- get alles methode --------------------------- */
 
   getClients() {
     return this.http.get(this.url);
   }
 
-
-/* --------------------------- verouderde methode! -------------------------- */
-
-/* client creation doen we nu in de service: */
-  makeClients(id: number): Client {
-    const client: Client = new Client;
-    if (id === 1) {
-      client.firstName = 'Rachelle';
-      client.lastName = "Philip";
-    }
-    if (id === 2) {
-      client.firstName = "Michiel";
-      client.lastName = "Janssens";
-    }
-    if (id === 3) {
-      client.firstName = "Trees";
-      client.lastName = "Elzinga";
-    }
-    return client;
-
-  }
 }

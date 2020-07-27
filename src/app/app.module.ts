@@ -22,6 +22,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FooterComponent } from './footer/footer.component';
+import { SemipalatinskComponent } from './semipalatinsk/semipalatinsk.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FooterComponent } from './footer/footer.component';
     NgshitComponent,
     NavbarComponent,
     NotfoundComponent,
-    FooterComponent
+    FooterComponent,
+    SemipalatinskComponent
   ],
   imports: [
     BrowserModule,
@@ -41,11 +43,12 @@ import { FooterComponent } from './footer/footer.component';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
-  
+
     RouterModule.forRoot( [
       {path: '', component: HomeComponent},
       {path: 'clients', component: ClientsComponent},
       {path: 'docent', component: DocentComponent},
+      {path: 'test', component: SemipalatinskComponent},
       {path: '**', component: NotfoundComponent}
 
     ]),

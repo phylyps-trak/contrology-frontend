@@ -1,31 +1,14 @@
 <script   src="clients.js">
 </script>
+<div class="container-fluid">
 <h2>
   Clients
 </h2>
-<hr />
-<!-- eerst test voor uitlezen variablen uit TS-->
-<div>
-  De eerste client heet {{ client1.firstName }} {{ client1.lastName }}
-</div>
-<div  *ngIf="client2">
-  <!-- voor als er misschien nog geen object is aangemaakt... -->
-  De tweede client heet {{ client2.firstName }} {{ client2.lastName }}
-</div>
-<br />
-<!--tijdelijk uitgeschakeld
-<h3>Eerste methode</h3>
-<button (click)="fillClients()">fill clients</button>
-<div *ngIf="clientsArray">
-<ul>
-<li *ngFor="let client of clientsArray">
-      {{ client.firstName }}
-</li>
-</ul>
-</div>
-<hr />
--->
+TEST:
 
+<p>{{ getClients()[0]?.p?.voornaam }}</p>
+
+<hr />
 <!-- *------------------- DIT IS EEN REPEATED CLIENT CARD ------------------- -->
 
 <div class = "album py-5 bg-light">
@@ -116,4 +99,5 @@
                   </div>
             </div>
       </div>
+</div>
 </div>

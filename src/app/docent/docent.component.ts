@@ -1,39 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { DocentService } from '../docent.service';
 
 @Component({
   selector: 'app-docent',
   templateUrl: './docent.component.html'
-  //styleUrls: ['./docent.component.css']
+  // styleUrls: ['./docent.component.css']
 })
 export class DocentComponent implements OnInit {
-// ***** 
-//even een basic functionaliteits testje maken: primitive two-way binding
-private _michielsVar:string = "deze test werkt!"
-  
-get michielsVar():string{
-  return this._michielsVar
-}
-set michielsVar(s:string){
-  this._michielsVar = s;
+
+constructor(private service: DocentService){}
+myResponse: any;
+
+
+ngOnInit(): void {
+  this.service.getTestClient()
+  .subscribe(myResponse => console.log(myResponse));
 }
 
-changeVar($event){
-  this.michielsVar = $event.target.value;
-}
-//  *****
-private email:string = "deze";
-
-getEmail(){
-  return this.email;
-}
-changeEmail($event){
-  this.email = $event.target.value;
-}
-//  *****
-// real two-way binding
-numbervar:number;
-  constructor() { }
-  ngOnInit(): void {
-  }
 
 }
+
+
+

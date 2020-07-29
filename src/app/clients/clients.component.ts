@@ -21,7 +21,7 @@ export class ClientsComponent implements OnInit {
     this.service.getClients()
       .subscribe(response => {
           this.clientsArray = response as Client[];
-          console.log(response);
+          //console.log(response);
         });
   }
 

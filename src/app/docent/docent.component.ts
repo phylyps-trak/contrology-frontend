@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DocentService } from '../docent.service';
+import { Client } from '../clients/client';
+
 
 @Component({
   selector: 'app-docent',
@@ -9,16 +11,22 @@ import { DocentService } from '../docent.service';
 export class DocentComponent implements OnInit {
 
 constructor(private service: DocentService){}
-myResponse: any;
+
+private myResponse: Client[] = [];
 
 
 ngOnInit(): void {
   this.service.getTestClient()
-  .subscribe(myResponse => console.log(myResponse));
+  .subscribe(myResponse => {
+    this.myResponse = myResponse as Client[];
+    console.log(myResponse);
+  });
+}
+getResponse(): Client [] {
+  return this.myResponse;
+}
 }
 
-
-}
 
 
 

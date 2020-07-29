@@ -9,7 +9,7 @@ export class DocentService {
   constructor(private http: HttpClient) { }
 
   getTestClient(){
-    return this.http.get('http://localhost:8082/api/clients/id/3');
+    return this.http.get('https://contrology.one/api/clients/id/3');
   }
 
 }

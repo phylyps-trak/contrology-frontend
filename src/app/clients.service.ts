@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ClientsService {
   constructor(private http: HttpClient) { }
 
-  private url: string = 'http://contrology.one/api/clients';
+  private url: string = 'http://localhost:8082/api/clients';
 
   getClients() {
     return this.http.get(this.url);

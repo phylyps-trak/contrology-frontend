@@ -1,1 +1,69 @@
-<p>docent works!</p>
+<div class="container-fluid">
+  <div>
+    ZIEEN WE DE DIV??
+    De persoon heet: {{ getResponse()?.p?.achternaam }}
+  </div>
+<!-- *----------------------- testformulier bootstrap ----------------------- -->
+<p>opgeven</p>
+<h3>Nieuwe client opgeven</h3>
+<form>
+  <div class="form-group row">
+    <label for="inputVoornaam" class="col-sm-2 col-form-label">Voornaam</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputVoornaam" placeholder="voornaam">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputAchternaam" class="col-sm-2 col-form-label">Achternaam</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputAchternaam" placeholder="achternaam">
+    </div>
+  </div>
+
+<!-- *----------------- TODO: wijzigen in datumselectieding ----------------- -->
+
+  <div class="form-group row">
+    <label for="inputInschrijfdatum" class="col-sm-2 col-form-label">Datum ingeschreven</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputInschrijfdatum" placeholder="-->later veranderen in datumselectieding">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputNotitie" class="col-sm-2 col-form-label">Notitie</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" id="inputNotitie" rows="3"></textarea>
+    </div>
+  </div>
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Niveau</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+          <label class="form-check-label" for="gridRadios1">
+            Beginner
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          <label class="form-check-label" for="gridRadios2">
+            Intermediate
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+          <label class="form-check-label" for="gridRadios3">
+            Advanced
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Opslaan</button>
+    </div>
+  </div>
+</form>
+<!-- *----------------------- testformulier bootstrap tot hier ----------------------- -->
+</div>

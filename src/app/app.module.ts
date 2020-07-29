@@ -17,7 +17,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+//bootstrap JS stuff
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { FooterComponent } from './footer/footer.component';
+import { SemipalatinskComponent } from './semipalatinsk/semipalatinsk.component';
 
 @NgModule({
   declarations: [
@@ -27,20 +32,27 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DocentComponent,
     NgshitComponent,
     NavbarComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    FooterComponent,
+    SemipalatinskComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    BsDropdownModule.forRoot(),
+    TooltipModule.forRoot(),
+    ModalModule.forRoot(),
+
     RouterModule.forRoot( [
       {path: '', component: HomeComponent},
       {path: 'clients', component: ClientsComponent},
       {path: 'docent', component: DocentComponent},
+      {path: 'test', component: SemipalatinskComponent},
       {path: '**', component: NotfoundComponent}
 
     ]),
-  ],
+],
   providers: [ClientsService, DocentService, HomeService, ],
   bootstrap: [AppComponent]
 })

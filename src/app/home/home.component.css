@@ -5,10 +5,14 @@
       background-position: 50%;
       background-size: 100%;
       background-blend-mode: overlay;
+      border-bottom: 70px;
+      border-color: #4fdae1;
 }
 
 .text-center {
       margin-bottom: -32px;
+      border-bottom: 70px;
+      border-color: #4fdae1;
 }
 /* een beetje default styling */
 .box {
@@ -42,7 +46,7 @@
     /*flex-direction: column;*/
     /* means MAIN AXIS is top->down, & CROSS AXIS is left -> right*/
     flex-wrap:wrap;
-    
+
 }
     /*selector voor child divs; flex items*/
 .box {
